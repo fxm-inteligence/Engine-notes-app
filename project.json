@@ -1,0 +1,1275 @@
+{
+  "format": "fxm-project",
+  "formatVersion": 1,
+  "generatorVersion": "0.0.0",
+  "project": {
+    "id": "2834d000-cd49-486f-9634-dc38927e30da",
+    "name": "Notes App",
+    "canvases": [
+      {
+        "id": "f2b682f1-d6b2-4e56-9b1f-5a6ab43ab614",
+        "kind": "Database",
+        "blocks": [
+          {
+            "id": "84f53701-15a6-4d99-8fe0-43e91db0a1d8",
+            "category": "Schema",
+            "type": "Database",
+            "properties": [
+              {
+                "name": "name",
+                "type": "String",
+                "value": "AppDatabase"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.357Z",
+              "updatedAt": "2026-10-21T13:43:06.357Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "410f65d6-40c0-4c3a-8d46-c357adbb2b5e",
+            "category": "Entity",
+            "type": "Field",
+            "properties": [
+              {
+                "name": "name",
+                "type": "String",
+                "value": "id"
+              },
+              {
+                "name": "type",
+                "type": "Enum",
+                "value": "UUID"
+              },
+              {
+                "name": "required",
+                "type": "Boolean",
+                "value": true
+              },
+              {
+                "name": "unique",
+                "type": "Boolean",
+                "value": true
+              },
+              {
+                "name": "defaultValue",
+                "type": "String"
+              },
+              {
+                "name": "autoIncrement",
+                "type": "Boolean"
+              },
+              {
+                "name": "length",
+                "type": "Number"
+              },
+              {
+                "name": "precision",
+                "type": "Number"
+              },
+              {
+                "name": "scale",
+                "type": "Number"
+              },
+              {
+                "name": "dimensions",
+                "type": "Number"
+              },
+              {
+                "name": "enumValues",
+                "type": "Array"
+              },
+              {
+                "name": "arrayElementType",
+                "type": "Enum"
+              },
+              {
+                "name": "description",
+                "type": "String"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.357Z",
+              "updatedAt": "2026-10-21T13:43:06.357Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "2c7e99c4-438a-4f13-a0d3-a4adcb72f1ad",
+            "category": "Entity",
+            "type": "Entity",
+            "properties": [
+              {
+                "name": "name",
+                "type": "String",
+                "value": "Note"
+              },
+              {
+                "name": "primaryIdentifier",
+                "type": "Reference",
+                "value": "410f65d6-40c0-4c3a-8d46-c357adbb2b5e"
+              },
+              {
+                "name": "softDelete",
+                "type": "Boolean"
+              },
+              {
+                "name": "auditable",
+                "type": "Boolean"
+              },
+              {
+                "name": "tenantScoped",
+                "type": "Boolean"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.357Z",
+              "updatedAt": "2026-10-21T13:43:06.357Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "2ce98215-938b-4a5b-89c4-cc125bec3bd1",
+            "category": "Entity",
+            "type": "Field",
+            "properties": [
+              {
+                "name": "name",
+                "type": "String",
+                "value": "title"
+              },
+              {
+                "name": "type",
+                "type": "Enum",
+                "value": "String"
+              },
+              {
+                "name": "required",
+                "type": "Boolean",
+                "value": true
+              },
+              {
+                "name": "unique",
+                "type": "Boolean",
+                "value": false
+              },
+              {
+                "name": "defaultValue",
+                "type": "String"
+              },
+              {
+                "name": "autoIncrement",
+                "type": "Boolean"
+              },
+              {
+                "name": "length",
+                "type": "Number"
+              },
+              {
+                "name": "precision",
+                "type": "Number"
+              },
+              {
+                "name": "scale",
+                "type": "Number"
+              },
+              {
+                "name": "dimensions",
+                "type": "Number"
+              },
+              {
+                "name": "enumValues",
+                "type": "Array"
+              },
+              {
+                "name": "arrayElementType",
+                "type": "Enum"
+              },
+              {
+                "name": "description",
+                "type": "String"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.357Z",
+              "updatedAt": "2026-10-21T13:43:06.357Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "9f41eb58-0b21-404d-85ff-fb5c672cfbf6",
+            "category": "Entity",
+            "type": "Field",
+            "properties": [
+              {
+                "name": "name",
+                "type": "String",
+                "value": "body"
+              },
+              {
+                "name": "type",
+                "type": "Enum",
+                "value": "Text"
+              },
+              {
+                "name": "required",
+                "type": "Boolean",
+                "value": false
+              },
+              {
+                "name": "unique",
+                "type": "Boolean",
+                "value": false
+              },
+              {
+                "name": "defaultValue",
+                "type": "String"
+              },
+              {
+                "name": "autoIncrement",
+                "type": "Boolean"
+              },
+              {
+                "name": "length",
+                "type": "Number"
+              },
+              {
+                "name": "precision",
+                "type": "Number"
+              },
+              {
+                "name": "scale",
+                "type": "Number"
+              },
+              {
+                "name": "dimensions",
+                "type": "Number"
+              },
+              {
+                "name": "enumValues",
+                "type": "Array"
+              },
+              {
+                "name": "arrayElementType",
+                "type": "Enum"
+              },
+              {
+                "name": "description",
+                "type": "String"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.357Z",
+              "updatedAt": "2026-10-21T13:43:06.357Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "7087faec-2973-4d45-a0b7-78a8c83b0c23",
+            "category": "Entity",
+            "type": "Field",
+            "properties": [
+              {
+                "name": "name",
+                "type": "String",
+                "value": "pinned"
+              },
+              {
+                "name": "type",
+                "type": "Enum",
+                "value": "Boolean"
+              },
+              {
+                "name": "required",
+                "type": "Boolean",
+                "value": false
+              },
+              {
+                "name": "unique",
+                "type": "Boolean",
+                "value": false
+              },
+              {
+                "name": "defaultValue",
+                "type": "String"
+              },
+              {
+                "name": "autoIncrement",
+                "type": "Boolean"
+              },
+              {
+                "name": "length",
+                "type": "Number"
+              },
+              {
+                "name": "precision",
+                "type": "Number"
+              },
+              {
+                "name": "scale",
+                "type": "Number"
+              },
+              {
+                "name": "dimensions",
+                "type": "Number"
+              },
+              {
+                "name": "enumValues",
+                "type": "Array"
+              },
+              {
+                "name": "arrayElementType",
+                "type": "Enum"
+              },
+              {
+                "name": "description",
+                "type": "String"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.357Z",
+              "updatedAt": "2026-10-21T13:43:06.357Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "e8c263bf-673b-47d4-bd3f-f6330698ca08",
+            "category": "Entity",
+            "type": "Field",
+            "properties": [
+              {
+                "name": "name",
+                "type": "String",
+                "value": "createdAt"
+              },
+              {
+                "name": "type",
+                "type": "Enum",
+                "value": "DateTime"
+              },
+              {
+                "name": "required",
+                "type": "Boolean",
+                "value": false
+              },
+              {
+                "name": "unique",
+                "type": "Boolean"
+              },
+              {
+                "name": "defaultValue",
+                "type": "String",
+                "value": "now"
+              },
+              {
+                "name": "autoIncrement",
+                "type": "Boolean"
+              },
+              {
+                "name": "length",
+                "type": "Number"
+              },
+              {
+                "name": "precision",
+                "type": "Number"
+              },
+              {
+                "name": "scale",
+                "type": "Number"
+              },
+              {
+                "name": "dimensions",
+                "type": "Number"
+              },
+              {
+                "name": "enumValues",
+                "type": "Array"
+              },
+              {
+                "name": "arrayElementType",
+                "type": "Enum"
+              },
+              {
+                "name": "description",
+                "type": "String"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.357Z",
+              "updatedAt": "2026-10-21T13:43:06.357Z",
+              "tags": []
+            }
+          }
+        ],
+        "connections": [],
+        "variables": [],
+        "layout": {
+          "84f53701-15a6-4d99-8fe0-43e91db0a1d8": {
+            "x": 0,
+            "y": 0
+          },
+          "410f65d6-40c0-4c3a-8d46-c357adbb2b5e": {
+            "x": 300,
+            "y": 150
+          },
+          "2c7e99c4-438a-4f13-a0d3-a4adcb72f1ad": {
+            "x": 300,
+            "y": 0
+          },
+          "2ce98215-938b-4a5b-89c4-cc125bec3bd1": {
+            "x": 600,
+            "y": 150
+          },
+          "9f41eb58-0b21-404d-85ff-fb5c672cfbf6": {
+            "x": 800,
+            "y": 150
+          },
+          "7087faec-2973-4d45-a0b7-78a8c83b0c23": {
+            "x": 1000,
+            "y": 150
+          },
+          "e8c263bf-673b-47d4-bd3f-f6330698ca08": {
+            "x": 1200,
+            "y": 150
+          }
+        },
+        "hierarchy": {
+          "84f53701-15a6-4d99-8fe0-43e91db0a1d8": [
+            "2c7e99c4-438a-4f13-a0d3-a4adcb72f1ad"
+          ],
+          "2c7e99c4-438a-4f13-a0d3-a4adcb72f1ad": [
+            "410f65d6-40c0-4c3a-8d46-c357adbb2b5e",
+            "2ce98215-938b-4a5b-89c4-cc125bec3bd1",
+            "9f41eb58-0b21-404d-85ff-fb5c672cfbf6",
+            "7087faec-2973-4d45-a0b7-78a8c83b0c23",
+            "e8c263bf-673b-47d4-bd3f-f6330698ca08"
+          ]
+        },
+        "metadata": {
+          "version": "0.0.0",
+          "createdAt": "2026-10-21T13:43:06.356Z",
+          "updatedAt": "2026-10-21T13:43:06.356Z",
+          "tags": []
+        }
+      },
+      {
+        "id": "107d0d6a-5cfa-4f2f-b8b7-e93ccb2e3dd8",
+        "kind": "Backend",
+        "blocks": [
+          {
+            "id": "df26b288-04f0-4915-9743-a1619cd4567a",
+            "category": "Security",
+            "type": "API Key",
+            "properties": [
+              {
+                "name": "name",
+                "type": "String",
+                "value": "Admin Key"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.995Z",
+              "updatedAt": "2026-10-21T13:43:06.995Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "d1a66b1a-1759-43e9-8fd8-835c59e69eba",
+            "category": "API",
+            "type": "Resource",
+            "properties": [
+              {
+                "name": "name",
+                "type": "String",
+                "value": "Note"
+              },
+              {
+                "name": "entity",
+                "type": "Reference",
+                "value": "2c7e99c4-438a-4f13-a0d3-a4adcb72f1ad"
+              },
+              {
+                "name": "route",
+                "type": "String",
+                "value": "/notes"
+              },
+              {
+                "name": "guards",
+                "type": "Array",
+                "value": [
+                  "df26b288-04f0-4915-9743-a1619cd4567a"
+                ]
+              },
+              {
+                "name": "publicRead",
+                "type": "Boolean",
+                "value": true,
+                "defaultValue": false
+              },
+              {
+                "name": "publicCreate",
+                "type": "Boolean",
+                "value": true,
+                "defaultValue": false
+              },
+              {
+                "name": "readOnly",
+                "type": "Boolean",
+                "value": false,
+                "defaultValue": false
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.995Z",
+              "updatedAt": "2026-10-21T13:43:06.995Z",
+              "tags": []
+            }
+          }
+        ],
+        "connections": [
+          {
+            "id": "a6a94811-aa3a-42c1-98af-ae8440bf8ee8",
+            "type": "Dependency",
+            "from": {
+              "blockId": "d1a66b1a-1759-43e9-8fd8-835c59e69eba",
+              "port": "guards"
+            },
+            "to": {
+              "blockId": "df26b288-04f0-4915-9743-a1619cd4567a",
+              "port": "guards"
+            },
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.995Z",
+              "updatedAt": "2026-10-21T13:43:06.995Z",
+              "tags": []
+            }
+          }
+        ],
+        "variables": [],
+        "layout": {
+          "df26b288-04f0-4915-9743-a1619cd4567a": {
+            "x": 0,
+            "y": 300
+          },
+          "d1a66b1a-1759-43e9-8fd8-835c59e69eba": {
+            "x": 0,
+            "y": 540
+          }
+        },
+        "hierarchy": {},
+        "metadata": {
+          "version": "0.0.0",
+          "createdAt": "2026-10-21T13:43:06.995Z",
+          "updatedAt": "2026-10-21T13:43:06.995Z",
+          "tags": []
+        }
+      },
+      {
+        "id": "533c9517-7ecd-4704-8cbd-cdd9221b6734",
+        "kind": "Frontend",
+        "blocks": [
+          {
+            "id": "03d5b445-baad-4d6c-a036-ffd0a12ceebb",
+            "category": "Structure",
+            "type": "Page",
+            "properties": [
+              {
+                "name": "kind",
+                "type": "Enum",
+                "value": "Page",
+                "defaultValue": "Page"
+              },
+              {
+                "name": "route",
+                "type": "String",
+                "value": "/",
+                "defaultValue": "/"
+              },
+              {
+                "name": "title",
+                "type": "String",
+                "value": "Notes"
+              },
+              {
+                "name": "description",
+                "type": "String"
+              },
+              {
+                "name": "ogImage",
+                "type": "String"
+              },
+              {
+                "name": "noIndex",
+                "type": "Boolean",
+                "value": false,
+                "defaultValue": false
+              },
+              {
+                "name": "requiresAuth",
+                "type": "Boolean",
+                "value": false,
+                "defaultValue": false
+              },
+              {
+                "name": "authRedirect",
+                "type": "String",
+                "value": "/login",
+                "defaultValue": "/login"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.995Z",
+              "updatedAt": "2026-10-21T13:43:06.995Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "83a71574-1d30-462f-b7f8-c360c4ccfdf9",
+            "category": "Data",
+            "type": "Read",
+            "properties": [
+              {
+                "name": "name",
+                "type": "String",
+                "value": "notes"
+              },
+              {
+                "name": "endpoint",
+                "type": "Reference"
+              },
+              {
+                "name": "url",
+                "type": "String",
+                "value": "/notes?sort=-createdAt"
+              },
+              {
+                "name": "shape",
+                "type": "Enum",
+                "value": "list",
+                "defaultValue": "list"
+              },
+              {
+                "name": "offline",
+                "type": "Boolean",
+                "value": false,
+                "defaultValue": false
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.997Z",
+              "updatedAt": "2026-10-21T13:43:06.997Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "462b4da0-aeb7-44b5-9dd8-932d2f6d2be4",
+            "category": "UI",
+            "type": "Table",
+            "properties": [
+              {
+                "name": "columns",
+                "type": "Array",
+                "value": [
+                  "title",
+                  "body",
+                  "pinned"
+                ]
+              },
+              {
+                "name": "columnLabels",
+                "type": "Array",
+                "value": [
+                  "title",
+                  "body",
+                  "pinned"
+                ]
+              },
+              {
+                "name": "source",
+                "type": "Reference",
+                "value": "83a71574-1d30-462f-b7f8-c360c4ccfdf9"
+              },
+              {
+                "name": "backgroundColor",
+                "type": "Enum",
+                "value": "none",
+                "defaultValue": "none"
+              },
+              {
+                "name": "textColor",
+                "type": "Enum",
+                "value": "none",
+                "defaultValue": "none"
+              },
+              {
+                "name": "borderRadius",
+                "type": "Enum",
+                "value": "none",
+                "defaultValue": "none"
+              },
+              {
+                "name": "shadow",
+                "type": "Enum",
+                "value": "none",
+                "defaultValue": "none"
+              },
+              {
+                "name": "animation",
+                "type": "Enum",
+                "value": "none",
+                "defaultValue": "none"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.997Z",
+              "updatedAt": "2026-10-21T13:43:06.997Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "fce7e6a5-bc81-4cac-8f8c-1359606d1cc9",
+            "category": "Data",
+            "type": "Write",
+            "properties": [
+              {
+                "name": "name",
+                "type": "String",
+                "value": "addNote"
+              },
+              {
+                "name": "endpoint",
+                "type": "Reference"
+              },
+              {
+                "name": "url",
+                "type": "String",
+                "value": "/notes"
+              },
+              {
+                "name": "method",
+                "type": "Enum",
+                "value": "POST",
+                "defaultValue": "POST"
+              },
+              {
+                "name": "syncUrl",
+                "type": "String"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:07.000Z",
+              "updatedAt": "2026-10-21T13:43:07.000Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "263d2b95-678a-4bb6-8268-0ea4e6db7cfd",
+            "category": "Forms",
+            "type": "Field",
+            "properties": [
+              {
+                "name": "kind",
+                "type": "Enum",
+                "value": "Text",
+                "defaultValue": "Text"
+              },
+              {
+                "name": "label",
+                "type": "String",
+                "value": "title"
+              },
+              {
+                "name": "name",
+                "type": "String",
+                "value": "title"
+              },
+              {
+                "name": "placeholder",
+                "type": "String"
+              },
+              {
+                "name": "options",
+                "type": "Array"
+              },
+              {
+                "name": "source",
+                "type": "Reference"
+              },
+              {
+                "name": "valueKey",
+                "type": "String"
+              },
+              {
+                "name": "labelKey",
+                "type": "String"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:07.001Z",
+              "updatedAt": "2026-10-21T13:43:07.001Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "09b6cd1b-8274-4ead-99ee-69e477fbb4f3",
+            "category": "Forms",
+            "type": "Field",
+            "properties": [
+              {
+                "name": "kind",
+                "type": "Enum",
+                "value": "Rich Text",
+                "defaultValue": "Text"
+              },
+              {
+                "name": "label",
+                "type": "String",
+                "value": "body"
+              },
+              {
+                "name": "name",
+                "type": "String",
+                "value": "body"
+              },
+              {
+                "name": "placeholder",
+                "type": "String"
+              },
+              {
+                "name": "options",
+                "type": "Array"
+              },
+              {
+                "name": "source",
+                "type": "Reference"
+              },
+              {
+                "name": "valueKey",
+                "type": "String"
+              },
+              {
+                "name": "labelKey",
+                "type": "String"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:07.001Z",
+              "updatedAt": "2026-10-21T13:43:07.001Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "13cbd0fd-b86d-44dd-aeb5-ed050101d857",
+            "category": "Forms",
+            "type": "Field",
+            "properties": [
+              {
+                "name": "kind",
+                "type": "Enum",
+                "value": "Checkbox",
+                "defaultValue": "Text"
+              },
+              {
+                "name": "label",
+                "type": "String",
+                "value": "pinned"
+              },
+              {
+                "name": "name",
+                "type": "String",
+                "value": "pinned"
+              },
+              {
+                "name": "placeholder",
+                "type": "String"
+              },
+              {
+                "name": "options",
+                "type": "Array"
+              },
+              {
+                "name": "source",
+                "type": "Reference"
+              },
+              {
+                "name": "valueKey",
+                "type": "String"
+              },
+              {
+                "name": "labelKey",
+                "type": "String"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:07.001Z",
+              "updatedAt": "2026-10-21T13:43:07.001Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "a9e4404d-1e45-4e1d-aa83-dd8ef6def65d",
+            "category": "UI",
+            "type": "Button",
+            "properties": [
+              {
+                "name": "label",
+                "type": "String",
+                "value": "Add",
+                "defaultValue": "Button"
+              },
+              {
+                "name": "backgroundColor",
+                "type": "Enum",
+                "value": "none",
+                "defaultValue": "none"
+              },
+              {
+                "name": "textColor",
+                "type": "Enum",
+                "value": "none",
+                "defaultValue": "none"
+              },
+              {
+                "name": "borderRadius",
+                "type": "Enum",
+                "value": "none",
+                "defaultValue": "none"
+              },
+              {
+                "name": "shadow",
+                "type": "Enum",
+                "value": "none",
+                "defaultValue": "none"
+              },
+              {
+                "name": "animation",
+                "type": "Enum",
+                "value": "none",
+                "defaultValue": "none"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:07.001Z",
+              "updatedAt": "2026-10-21T13:43:07.001Z",
+              "tags": []
+            }
+          }
+        ],
+        "connections": [
+          {
+            "id": "b186da55-18d3-444c-a7ff-436b1d26d32b",
+            "type": "Dependency",
+            "from": {
+              "blockId": "462b4da0-aeb7-44b5-9dd8-932d2f6d2be4",
+              "port": "source"
+            },
+            "to": {
+              "blockId": "83a71574-1d30-462f-b7f8-c360c4ccfdf9",
+              "port": "data"
+            },
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:06.998Z",
+              "updatedAt": "2026-10-21T13:43:06.998Z",
+              "tags": []
+            }
+          }
+        ],
+        "variables": [],
+        "layout": {
+          "03d5b445-baad-4d6c-a036-ffd0a12ceebb": {
+            "x": 0,
+            "y": 0
+          },
+          "83a71574-1d30-462f-b7f8-c360c4ccfdf9": {
+            "x": 300,
+            "y": 0
+          },
+          "462b4da0-aeb7-44b5-9dd8-932d2f6d2be4": {
+            "x": 300,
+            "y": 150
+          },
+          "fce7e6a5-bc81-4cac-8f8c-1359606d1cc9": {
+            "x": 300,
+            "y": 300
+          },
+          "263d2b95-678a-4bb6-8268-0ea4e6db7cfd": {
+            "x": 600,
+            "y": 0
+          },
+          "09b6cd1b-8274-4ead-99ee-69e477fbb4f3": {
+            "x": 600,
+            "y": 150
+          },
+          "13cbd0fd-b86d-44dd-aeb5-ed050101d857": {
+            "x": 600,
+            "y": 300
+          },
+          "a9e4404d-1e45-4e1d-aa83-dd8ef6def65d": {
+            "x": 900,
+            "y": 0
+          }
+        },
+        "hierarchy": {
+          "03d5b445-baad-4d6c-a036-ffd0a12ceebb": [
+            "83a71574-1d30-462f-b7f8-c360c4ccfdf9",
+            "462b4da0-aeb7-44b5-9dd8-932d2f6d2be4",
+            "fce7e6a5-bc81-4cac-8f8c-1359606d1cc9",
+            "263d2b95-678a-4bb6-8268-0ea4e6db7cfd",
+            "09b6cd1b-8274-4ead-99ee-69e477fbb4f3",
+            "13cbd0fd-b86d-44dd-aeb5-ed050101d857",
+            "a9e4404d-1e45-4e1d-aa83-dd8ef6def65d"
+          ]
+        },
+        "metadata": {
+          "version": "0.0.0",
+          "createdAt": "2026-10-21T13:43:06.995Z",
+          "updatedAt": "2026-10-21T13:43:06.995Z",
+          "tags": []
+        }
+      },
+      {
+        "id": "7f8e7eae-0c22-40ba-84e2-667f9bec9b12",
+        "kind": "CI/CD",
+        "blocks": [
+          {
+            "id": "4b0119f4-86d8-4eca-985d-3f9e021d9475",
+            "category": "Pipeline",
+            "type": "Pipeline",
+            "properties": [
+              {
+                "name": "kind",
+                "type": "Enum",
+                "value": "Build Pipeline"
+              },
+              {
+                "name": "name",
+                "type": "String",
+                "value": "Build Pipeline"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:07.001Z",
+              "updatedAt": "2026-10-21T13:43:07.001Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "dedf9c49-acae-4c19-acae-c8300ef1731b",
+            "category": "Trigger",
+            "type": "Trigger",
+            "properties": [
+              {
+                "name": "kind",
+                "type": "Enum",
+                "value": "Push"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:07.002Z",
+              "updatedAt": "2026-10-21T13:43:07.002Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "a337a088-fbf5-4214-8a57-9d9b27a88dc8",
+            "category": "Stage",
+            "type": "Stage",
+            "properties": [
+              {
+                "name": "kind",
+                "type": "Enum",
+                "value": "Build"
+              },
+              {
+                "name": "name",
+                "type": "String",
+                "value": "Build"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:07.002Z",
+              "updatedAt": "2026-10-21T13:43:07.002Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "2b08f00f-e2f2-4886-b3a9-7f28a6522db1",
+            "category": "Job",
+            "type": "Job",
+            "properties": [
+              {
+                "name": "kind",
+                "type": "Enum",
+                "value": "Build Project"
+              },
+              {
+                "name": "name",
+                "type": "String",
+                "value": "Build Project"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:07.002Z",
+              "updatedAt": "2026-10-21T13:43:07.002Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "f3298a2a-d468-4971-a270-081cd5833ec0",
+            "category": "Stage",
+            "type": "Stage",
+            "properties": [
+              {
+                "name": "kind",
+                "type": "Enum",
+                "value": "Test"
+              },
+              {
+                "name": "name",
+                "type": "String",
+                "value": "Test"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:07.002Z",
+              "updatedAt": "2026-10-21T13:43:07.002Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "707f01ff-1dbd-45cd-8a43-05d89fb47678",
+            "category": "Job",
+            "type": "Job",
+            "properties": [
+              {
+                "name": "kind",
+                "type": "Enum",
+                "value": "Run Tests"
+              },
+              {
+                "name": "name",
+                "type": "String",
+                "value": "Run Tests"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:07.002Z",
+              "updatedAt": "2026-10-21T13:43:07.002Z",
+              "tags": []
+            }
+          }
+        ],
+        "connections": [
+          {
+            "id": "de1ca42f-3108-49c2-a4a0-14da55be27a8",
+            "type": "Dependency",
+            "from": {
+              "blockId": "dedf9c49-acae-4c19-acae-c8300ef1731b",
+              "port": "n/a"
+            },
+            "to": {
+              "blockId": "4b0119f4-86d8-4eca-985d-3f9e021d9475",
+              "port": "n/a"
+            },
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-10-21T13:43:07.002Z",
+              "updatedAt": "2026-10-21T13:43:07.002Z",
+              "tags": []
+            }
+          }
+        ],
+        "variables": [],
+        "layout": {
+          "4b0119f4-86d8-4eca-985d-3f9e021d9475": {
+            "x": 0,
+            "y": 0
+          },
+          "dedf9c49-acae-4c19-acae-c8300ef1731b": {
+            "x": 0,
+            "y": 0
+          },
+          "a337a088-fbf5-4214-8a57-9d9b27a88dc8": {
+            "x": 0,
+            "y": 0
+          },
+          "2b08f00f-e2f2-4886-b3a9-7f28a6522db1": {
+            "x": 0,
+            "y": 0
+          },
+          "f3298a2a-d468-4971-a270-081cd5833ec0": {
+            "x": 0,
+            "y": 0
+          },
+          "707f01ff-1dbd-45cd-8a43-05d89fb47678": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "hierarchy": {
+          "4b0119f4-86d8-4eca-985d-3f9e021d9475": [
+            "a337a088-fbf5-4214-8a57-9d9b27a88dc8",
+            "f3298a2a-d468-4971-a270-081cd5833ec0"
+          ],
+          "a337a088-fbf5-4214-8a57-9d9b27a88dc8": [
+            "2b08f00f-e2f2-4886-b3a9-7f28a6522db1"
+          ],
+          "f3298a2a-d468-4971-a270-081cd5833ec0": [
+            "707f01ff-1dbd-45cd-8a43-05d89fb47678"
+          ]
+        },
+        "metadata": {
+          "version": "0.0.0",
+          "createdAt": "2026-10-21T13:43:07.002Z",
+          "updatedAt": "2026-10-21T13:43:07.002Z",
+          "tags": []
+        }
+      }
+    ],
+    "metadata": {
+      "version": "0.0.0",
+      "createdAt": "2026-10-21T13:43:06.355Z",
+      "updatedAt": "2026-10-21T13:43:06.355Z",
+      "tags": []
+    }
+  },
+  "generation": {
+    "projectId": "2834d000-cd49-486f-9634-dc38927e30da",
+    "backend": {
+      "framework": "nestjs"
+    },
+    "frontend": {
+      "framework": "nextjs"
+    },
+    "database": {
+      "orm": "prisma",
+      "provider": "postgresql"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+node_modules
+dist
+build
+.next
+.nuxt
+.output
+.svelte-kit
+.angular
+.env

@@ -1,0 +1,18 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Schema: AppDatabase
+
+model Note {
+  id String @id @default(uuid()) @db.Uuid
+  title String
+  body String? @db.Text
+  pinned Boolean?
+  createdAt DateTime? @default(now())
+}
