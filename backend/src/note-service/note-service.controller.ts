@@ -1,9 +1,10 @@
-import { TOTAL_COUNT_HEADER, parseListQuery } from "../list-query";
+import { TOTAL_COUNT_HEADER, parseListQuery, withNamedQuery } from "../list-query";
 import { AdminKeyGuard } from "./admin-key.guard";
 import { CreateNoteRequestDto } from "./dto/create-note-request.dto";
+import { PatchNoteRequestDto } from "./dto/patch-note-request.dto";
 import { UpdateNoteRequestDto } from "./dto/update-note-request.dto";
 import { NoteService } from "./note-service.service";
-import { Body, Controller, Delete, Get, Param, Post, Put, Query, Res, UseGuards } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put, Query, Res, UseGuards } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { Response } from "express";
 
@@ -14,7 +15,7 @@ export class NoteServiceController {
 
   @Get("/notes")
   async listNotes(@Query() query: Record<string, unknown>, @Res({ passthrough: true }) response: Response) {
-    const page = await this.noteService.listNotes(parseListQuery(query));
+    const page = await this.noteService.listNotes(parseListQuery(withNamedQuery(query, { "pinned": { "pinned": "true", "sort": "-createdAt" }, "latest": { "sort": "-createdAt", "limit": "10" } })));
     response.setHeader(TOTAL_COUNT_HEADER, page.total);
     return page.items;
   }
@@ -33,6 +34,12 @@ export class NoteServiceController {
   @Put("/notes/:id")
   updateNote(@Param("id") id: string, @Body() dto: UpdateNoteRequestDto) {
     return this.noteService.updateNote(id, dto);
+  }
+
+  @UseGuards(AdminKeyGuard)
+  @Patch("/notes/:id")
+  patchNote(@Param("id") id: string, @Body() dto: PatchNoteRequestDto) {
+    return this.noteService.patchNote(id, dto);
   }
 
   @UseGuards(AdminKeyGuard)

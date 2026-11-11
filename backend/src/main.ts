@@ -8,6 +8,7 @@ import helmet from "helmet";
 import { AllExceptionsFilter } from "./all-exceptions.filter";
 import { AppModule } from "./app.module";
 import { SanitizePipe } from "./sanitize.pipe";
+import { requestLogging } from "./request-log";
 
 // Nest's `ws` adapter routes an incoming message by its `event` field; the
 // protocol every other Adapter and the generated frontend speak is
@@ -34,6 +35,7 @@ async function bootstrap() {
   // package this catalogue never installs; `ws` matches the raw-JSON-over-`ws`
   // protocol every other Adapter's own WebSocket transport already speaks.
   app.useWebSocketAdapter(new RouteWsAdapter(app));
+  app.use(requestLogging);
   app.use(helmet());
   app.enableCors({ origin: process.env.CORS_ORIGIN?.split(",") ?? false, credentials: true, exposedHeaders: ["X-Total-Count"] });
   app.useGlobalPipes(new SanitizePipe(), new ValidationPipe({ whitelist: true, transform: true }));

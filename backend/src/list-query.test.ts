@@ -8,6 +8,7 @@ test("a request without parameters asks for every row in the database's order", 
     sort: undefined,
     offset: 0,
     limit: undefined,
+    filters: {},
   });
   assert.deepEqual(parseListQuery({}), parseListQuery(undefined));
 });

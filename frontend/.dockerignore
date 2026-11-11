@@ -7,3 +7,5 @@ build
 .svelte-kit
 .angular
 .env
+test-results
+playwright-report

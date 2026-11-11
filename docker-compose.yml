@@ -29,6 +29,13 @@ services:
     ports:
       - "${BACKEND_PORT:-3001}:3000"
 
+  backend-ready:
+    image: busybox:1.36
+    command: ["sh", "-c", "until nc -z backend 3000; do sleep 1; done"]
+    depends_on:
+      - backend
+    restart: "no"
+
   frontend:
     build:
       context: .
@@ -36,7 +43,8 @@ services:
       args:
         NEXT_PUBLIC_API_URL: ${PUBLIC_API_URL:-http://localhost:${BACKEND_PORT:-3001}}
     depends_on:
-      - backend
+      backend-ready:
+        condition: service_completed_successfully
     ports:
       - "${FRONTEND_PORT:-3000}:3000"
 

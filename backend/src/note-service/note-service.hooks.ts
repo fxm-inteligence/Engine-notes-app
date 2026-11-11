@@ -8,6 +8,7 @@ export const hooks: Hooks<NoteService> = {
     // getNote(...) { /* throw to refuse the call */ },
     // createNote(...) { /* throw to refuse the call */ },
     // updateNote(...) { /* throw to refuse the call */ },
+    // patchNote(...) { /* throw to refuse the call */ },
     // deleteNote(...) { /* throw to refuse the call */ },
   },
   after: {
@@ -15,6 +16,7 @@ export const hooks: Hooks<NoteService> = {
     // getNote(result, ...) { return result; },
     // createNote(result, ...) { return result; },
     // updateNote(result, ...) { return result; },
+    // patchNote(result, ...) { return result; },
     // deleteNote(result, ...) { return result; },
   },
 };

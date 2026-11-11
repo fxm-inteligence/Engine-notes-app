@@ -526,12 +526,46 @@
                 "type": "Boolean",
                 "value": false,
                 "defaultValue": false
+              },
+              {
+                "name": "rules",
+                "type": "String",
+                "value": "title required\ntitle minLength 1\ntitle maxLength 120\nbody maxLength 5000"
+              },
+              {
+                "name": "queries",
+                "type": "String",
+                "value": "pinned: pinned=true, sort -createdAt\nlatest: sort -createdAt, limit 10"
               }
             ],
             "metadata": {
               "version": "0.0.0",
               "createdAt": "2026-10-21T13:43:06.995Z",
               "updatedAt": "2026-10-21T13:43:06.995Z",
+              "tags": []
+            }
+          },
+          {
+            "id": "62fa4959-f399-4dce-954e-b484c84486c1",
+            "category": "API",
+            "type": "Logging",
+            "properties": [
+              {
+                "name": "name",
+                "type": "String",
+                "value": "Logging"
+              },
+              {
+                "name": "level",
+                "type": "Enum",
+                "value": "info",
+                "defaultValue": "info"
+              }
+            ],
+            "metadata": {
+              "version": "0.0.0",
+              "createdAt": "2026-11-11T13:51:11.202Z",
+              "updatedAt": "2026-11-11T13:51:11.202Z",
               "tags": []
             }
           }
@@ -565,6 +599,10 @@
           "d1a66b1a-1759-43e9-8fd8-835c59e69eba": {
             "x": 0,
             "y": 540
+          },
+          "62fa4959-f399-4dce-954e-b484c84486c1": {
+            "x": 900,
+            "y": 600
           }
         },
         "hierarchy": {},

@@ -1,6 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { PrismaClient } from "@prisma/client";
-import type { ListQuery, Page } from "../list-query";
+import { ambient } from "../transaction-scope";
+import { readFilters, type FilterKind, type ListQuery, type Page } from "../list-query";
 
 export interface NoteRecord {
   id: string;
@@ -18,6 +19,25 @@ function searchWhere(search: string | undefined) {
       { body: { contains: search, mode: "insensitive" as const } },
     ],
   };
+}
+
+const FILTER_COLUMNS = new Map<string, FilterKind>([
+  ["id", "uuid"],
+  ["title", "text"],
+  ["pinned", "boolean"],
+  ["createdAt", "datetime"],
+]);
+
+function listWhere(query: ListQuery) {
+  const conditions: Record<string, unknown>[] = readFilters(query.filters, FILTER_COLUMNS).map(
+    ({ field, operator, value }) =>
+      value === undefined
+        ? { id: { in: [] } }
+        : { [field]: operator === "equals" ? value : { [operator]: value } },
+  );
+  const search = searchWhere(query.search);
+  if (search) conditions.push(search);
+  return { AND: conditions };
 }
 
 function orderBy(sort: ListQuery["sort"]) {
@@ -40,12 +60,12 @@ function orderBy(sort: ListQuery["sort"]) {
 
 @Injectable()
 export class NoteRepository {
-  private readonly prisma = new PrismaClient();
+  private readonly prisma = ambient(new PrismaClient());
 
   findPage(query: ListQuery): Promise<Page<NoteRecord>> {
     return Promise.all([
-      this.prisma.note.findMany({ where: searchWhere(query.search), orderBy: orderBy(query.sort), skip: query.offset, take: query.limit }),
-      this.prisma.note.count({ where: searchWhere(query.search) }),
+      this.prisma.note.findMany({ where: listWhere(query), orderBy: orderBy(query.sort), skip: query.offset, take: query.limit }),
+      this.prisma.note.count({ where: listWhere(query) }),
     ]).then(([rows, total]) => ({ items: rows, total }));
   }
 
